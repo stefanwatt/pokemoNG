@@ -1,0 +1,5 @@
+.entry.active::before{
+  content: ">";
+  position: absolute;
+  left: -1rem;
+}

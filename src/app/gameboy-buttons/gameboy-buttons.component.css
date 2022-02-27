@@ -1,0 +1,140 @@
+
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1.2rem;
+  margin-top: 5.6rem;
+  max-width: 33.4rem;
+}
+.btnContainer .direction {
+  display: flex;
+  flex-flow: row wrap;
+  height: 9.3rem;
+  width: 9.3rem;
+  margin-left: 1rem;
+}
+.btnContainer .direction__element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.1rem;
+  width: 3.1rem;
+}
+.btnContainer .direction__element--arrow {
+  background-color: #1a1a1a;
+}
+.btnContainer .direction__element__center {
+  height: 75%;
+  width: 75%;
+  border-radius: 50%;
+  background-color: #2b2a2a;
+  box-shadow: inset 0 0 0.3rem 0.4rem #1a1a1a;
+}
+.btnContainer .corner-rounded-top {
+  border-radius: 0.4rem 0.4rem 0 0;
+  box-shadow: 0.3rem 0.3rem 0.2rem 0.1rem rgba(77, 77, 77, 0.308);
+}
+.btnContainer .corner-rounded-top:active {
+  box-shadow: none;
+}
+.btnContainer .corner-rounded-bottom {
+  border-radius: 0 0 0.4rem 0.4rem;
+  box-shadow: 0.3rem 0.3rem 0.2rem 0.1rem rgba(77, 77, 77, 0.308);
+}
+.btnContainer .corner-rounded-bottom:active {
+  box-shadow: none;
+}
+.btnContainer .corner-rounded-left {
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+.btnContainer .corner-rounded-right {
+  border-radius: 0 0.4rem 0.4rem 0;
+  box-shadow: 0.3rem 0.3rem 0.2rem 0.1rem rgba(77, 77, 77, 0.308);
+}
+.btnContainer .corner-rounded-right:active {
+  box-shadow: none;
+}
+.btnContainer .AB {
+  height: 7.2rem;
+  width: 12rem;
+  margin-top: 1rem;
+  transform-origin: center;
+  transform: rotate(-30deg);
+}
+.btnContainer .AB__btn {
+  margin-top: 0.5rem;
+  padding: 0.6rem;
+  border: 1px solid #D3D8CF;
+  border-radius: 25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: inset 0.3rem 0.6rem 1rem 0.3rem #a17b05;
+  overflow: hidden;
+}
+.btnContainer .AB__btn__btn {
+  height: 4rem;
+  width: 4rem;
+  border: 1px solid black;
+  background-color: #971341;
+  border-radius: 50%;
+  box-shadow: inset 0 0 1rem #f76767, 0.3rem 0.3rem 0.2rem 0.1rem rgba(77, 77, 77, 0.308);
+}
+.btnContainer .AB__btn__btn:active {
+  box-shadow: none;
+}
+.btnContainer .AB__btn-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 2.3rem;
+}
+.btnContainer .AB__btn-label div {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.select-start {
+  margin-top: 3.4rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-self: center;
+  width: 12.5rem;
+}
+.select-start__btn-container {
+  transform: rotate(-30deg);
+  display: flex;
+  flex-direction: column;
+  width: 6rem;
+}
+.select-start__btn-container__btn {
+  box-shadow: inset 0.1rem 0.15rem 0.1rem 0.1rem #a17b05;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2rem;
+  border-radius: 1.2rem;
+}
+.select-start__btn-container .btn-menu {
+  width: 75%;
+  height: 40%;
+  border: 1px solid;
+  border-radius: 1rem;
+  background-color: #6b6d69;
+  box-shadow: inset 0.2rem 0.2rem 0.2rem 0rem #BCBFB8, 0.1rem 0.1rem 0.2rem 0.1rem rgba(77, 77, 77, 0.308);
+}
+.select-start__btn-container .btn-menu:active {
+  box-shadow: none;
+}
+.select-start__btn-container .label {
+  font-variant-caps: small-caps;
+  letter-spacing: 0.3rem;
+  margin: 0.2rem 1rem;
+  color: #1a1a1a;
+  font-weight: bold;
+}
