@@ -1,15 +1,27 @@
 <div class="btnContainer">
   <div class="direction">
     <div class="direction__element direction__element--blank"></div>
-    <div class="direction__element direction__element--arrow corner-rounded-top"></div>
+    <div
+      (click)="goUp()"
+      class="direction__element direction__element--arrow corner-rounded-top"
+    ></div>
     <div class="direction__element direction__element--blank"></div>
-    <div class="direction__element direction__element--arrow corner-rounded-left"></div>
+    <div
+      (click)="goLeft()"
+      class="direction__element direction__element--arrow corner-rounded-left"
+    ></div>
     <div class="direction__element direction__element--arrow">
       <div class="direction__element__center"></div>
     </div>
-    <div class="direction__element direction__element--arrow corner-rounded-right"></div>
+    <div
+      (click)="goRight()"
+      class="direction__element direction__element--arrow corner-rounded-right"
+    ></div>
     <div class="direction__element direction__element--blank"></div>
-    <div class="direction__element direction__element--arrow corner-rounded-bottom"></div>
+    <div
+      (click)="goDown()"
+      class="direction__element direction__element--arrow corner-rounded-bottom"
+    ></div>
     <div class="direction__element direction__element--blank"></div>
   </div>
   <div class="AB">
@@ -17,7 +29,6 @@
       <div class="AB__btn__btn"></div>
       <div class="AB__btn__btn"></div>
     </div>
-
     <div class="AB__btn-label">
       <div>B</div>
       <div>A</div>
