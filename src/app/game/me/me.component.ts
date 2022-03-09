@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import getPokemonTeam from '../getPokemonTeam'
 
 @Component({
   selector: 'app-me',
   templateUrl: './me.component.html',
-  styleUrls: ['./me.component.css']
+  styleUrls: ['./me.component.css'],
 })
 export class MeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
   currentPokemon = {
-    name:"cyndaquil",
+    name: 'cyndaquil',
     level: 5,
-    sex:"m",
-    currentKP:30,
-    maxKP:35
-  };
+    sex: 'm',
+    currentKP: 30,
+    maxKP: 35,
+  }
+  async ngOnInit(): Promise<void> {
+    const team = await getPokemonTeam()
+    this.currentPokemon.name = team[0].name.toLowerCase()
+  }
 }

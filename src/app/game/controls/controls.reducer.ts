@@ -11,6 +11,8 @@ import {
 const fightEntries = [
   { id: 1, text: 'TACKLE' },
   { id: 2, text: 'LEER' },
+  { id: 3, text: '----' },
+  { id: 4, text: '----' },
 ]
 const baseEntries: ControlsEntry[] = [
   { id: 1, text: 'FIGHT' },
@@ -81,17 +83,16 @@ const _controlsReducer = createReducer(
       state.entries.find((entry) => entry.id === newIndex) ||
       state.selectedEntry
     return { ...state, selectedEntry }
+  }),
+  on(confirm, (state: ControlsState) => {
+    if (state.selectedEntry.text === 'FIGHT')
+      return { entries: fightEntries, selectedEntry: fightEntries[0] }
+    return state
+  }),
+  on(cancel, (state: ControlsState) => {
+    return initialState
   })
-  // on(confirm, (state) => state - 1),
-  // on(cancel, (state) => 0)
 )
-type ControlsAction =
-  | typeof goUp
-  | typeof goDown
-  | typeof goLeft
-  | typeof goRight
-  | typeof confirm
-  | typeof cancel
 export function controlsReducer(state: any, action: any) {
   return _controlsReducer(state, action)
 }
