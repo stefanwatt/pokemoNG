@@ -9,7 +9,7 @@ import {
   goRight,
   goUp,
 } from './controls.actions'
-import type { ControlsState } from './controls.reducer'
+import { ControlsState } from './types'
 @Component({
   selector: 'app-controls',
   templateUrl: './controls.component.html',

@@ -8,7 +8,9 @@ import { ControlsComponent } from './game/controls/controls.component'
 import { KpComponent } from './game/kp/kp.component'
 import { StoreModule } from '@ngrx/store'
 import { controlsReducer } from './game/controls/controls.reducer'
-import { GameboyButtonsComponent } from './gameboy-buttons/gameboy-buttons.component'
+import { GameboyButtonsComponent } from './gameboy-buttons/gameboy-buttons.component';
+import { FooterComponent } from './game/footer/footer.component';
+import { MessageComponent } from './game/message/message.component'
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { GameboyButtonsComponent } from './gameboy-buttons/gameboy-buttons.compo
     ControlsComponent,
     KpComponent,
     GameboyButtonsComponent,
+    FooterComponent,
+    MessageComponent,
   ],
   imports: [BrowserModule, StoreModule.forRoot({ controls: controlsReducer })],
   providers: [],

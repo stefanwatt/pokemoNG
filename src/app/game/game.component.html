@@ -1,10 +1,22 @@
-<div class="flex flex-col justify-between mt-8 bg-white h-96">
+<div
+  *ngIf="activeComponent.name === 'base'"
+  class="flex flex-col justify-between mt-8 bg-white h-96"
+>
   <section class="h-full p-2 border-black">
-    <app-enemy></app-enemy> </section>
-  <section class="h-full p-2 border-black">
-    <app-me></app-me>
+    <app-enemy [team]="enemyTeam"></app-enemy>
   </section>
   <section class="h-full p-2 border-black">
-    <app-controls></app-controls> 
+    <app-me [team]="myTeam"></app-me>
+  </section>
+  <section class="h-full p-2 border-black">
+    <app-footer></app-footer>
+  </section>
+</div>
+<div
+  *ngIf="activeComponent.name === 'team'"
+  class="flex flex-col justify-between mt-8 bg-white h-96"
+>
+  <section class="h-full p-2 border-black">
+    <app-me></app-me>
   </section>
 </div>

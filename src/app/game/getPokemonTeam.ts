@@ -1,7 +1,9 @@
-export default async () => {
-  const res = await fetch(
-    'https://grape-deserted-stamp.glitch.me/api?t=all&n=6&r=johto'
-  )
-  const { data } = await res.json()
-  return data
+import johtoPokemon from './johtoPokemon'
+import { Pokemon, pokemonBlueprint } from './types'
+
+export default (n = 6): Pokemon[] => {
+  const shuffled = johtoPokemon.sort(() => 0.5 - Math.random())
+  let selectedNames = shuffled.slice(0, n)
+  const team = selectedNames.map((name) => ({ ...pokemonBlueprint, name }))
+  return team
 }

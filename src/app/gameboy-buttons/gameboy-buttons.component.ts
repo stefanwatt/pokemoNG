@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, EventEmitter, Output } from '@angular/core'
 import { Store } from '@ngrx/store'
 import { Observable } from 'rxjs'
 import {
@@ -9,7 +9,8 @@ import {
   goRight,
   goUp,
 } from '../game/controls/controls.actions'
-import type { ControlsState } from '../game/controls/controls.reducer'
+import { ControlsState } from '../game/controls/types'
+import CHILDREN from '../game/footer/children'
 @Component({
   selector: 'app-gameboy-buttons',
   templateUrl: './gameboy-buttons.component.html',
@@ -20,6 +21,10 @@ export class GameboyButtonsComponent implements OnInit {
   constructor(private store: Store<{ controls: ControlsState }>) {
     this.controls$ = store.select('controls')
   }
+
+  @Output()
+  switchFooterElem: EventEmitter<switchFooterElemEvent> = new EventEmitter<switchFooterElemEvent>()
+
   goUp() {
     this.store.dispatch(goUp())
   }
@@ -34,10 +39,15 @@ export class GameboyButtonsComponent implements OnInit {
   }
   confirm() {
     this.store.dispatch(confirm())
+    this.switchFooterElem.emit({ newElem: CHILDREN.MESSAGE, text: 'foo' })
   }
   cancel() {
     this.store.dispatch(cancel())
   }
 
   ngOnInit(): void {}
+}
+type switchFooterElemEvent = {
+  newElem: CHILDREN
+  text: string
 }

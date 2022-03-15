@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core'
-import getPokemonTeam from '../getPokemonTeam'
+import { Component, Input, OnInit } from '@angular/core'
+import { Pokemon, pokemonBlueprint } from '../types'
 
 @Component({
   selector: 'app-me',
@@ -8,16 +8,10 @@ import getPokemonTeam from '../getPokemonTeam'
 })
 export class MeComponent implements OnInit {
   constructor() {}
+  currentPokemon = pokemonBlueprint
+  ngOnInit() {
+    this.currentPokemon = this.team[0]
+  }
 
-  currentPokemon = {
-    name: 'cyndaquil',
-    level: 5,
-    sex: 'm',
-    currentKP: 30,
-    maxKP: 35,
-  }
-  async ngOnInit(): Promise<void> {
-    const team = await getPokemonTeam()
-    this.currentPokemon.name = team[0].name.toLowerCase()
-  }
+  @Input() team: Pokemon[]
 }

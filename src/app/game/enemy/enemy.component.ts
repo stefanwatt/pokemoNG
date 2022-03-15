@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
+import { Pokemon, pokemonBlueprint } from '../types'
+
 @Component({
   selector: 'app-enemy',
   templateUrl: './enemy.component.html',
@@ -6,13 +8,11 @@ import { Component, OnInit } from '@angular/core'
 })
 export class EnemyComponent implements OnInit {
   constructor() {}
-  ngOnInit(): void {}
 
-  currentPokemon = {
-    name: 'totodile',
-    level: 5,
-    sex: 'f',
-    currentKP: 30,
-    maxKP: 35,
+  currentPokemon = pokemonBlueprint
+  ngOnInit() {
+    this.currentPokemon = this.team[0]
   }
+
+  @Input() team: Pokemon[]
 }

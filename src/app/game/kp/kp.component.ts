@@ -1,28 +1,20 @@
-import { Input, Component, OnInit } from '@angular/core';
-type pokemon= {
-  name:string;
-  level:number;
-  sex:string;
-  currentKP:number;
-  maxKP:number
-}
+import { Input, Component, OnInit } from '@angular/core'
+import { Pokemon } from '../types'
 @Component({
   selector: 'app-kp',
   templateUrl: './kp.component.html',
-  styleUrls: ['./kp.component.css']
+  styleUrls: ['./kp.component.css'],
 })
 export class KpComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
+  @Input() pokemon: Pokemon
 
-  ngOnInit(): void {
-  }
-  @Input() pokemon:pokemon
-
-  hpPercent():number {
+  hpPercent(): number {
     if (!this.pokemon) return 100
-    const {currentKP,maxKP}=this.pokemon
-    const percentage= Math.round(currentKP/maxKP*100 )
+    const { currentKp, maxKp } = this.pokemon
+    const percentage = Math.round((currentKp / maxKp) * 100)
     return percentage
   }
 }
