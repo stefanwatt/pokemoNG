@@ -9,5 +9,5 @@ export class MessageComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  text = 'Enemy wants to battle!'
+  text = 'Which Pokemon?'
 }

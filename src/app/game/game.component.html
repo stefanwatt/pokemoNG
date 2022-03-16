@@ -14,9 +14,10 @@
 </div>
 <div
   *ngIf="activeComponent.name === 'team'"
-  class="flex flex-col justify-between mt-8 bg-white h-96"
+  class="flex flex-col w-full justify-between bg-white p-4"
 >
+  <app-team [team]="myTeam"></app-team>
   <section class="h-full p-2 border-black">
-    <app-me></app-me>
+    <app-footer></app-footer>
   </section>
 </div>

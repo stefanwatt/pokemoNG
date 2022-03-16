@@ -1,0 +1,19 @@
+<div class="w-56 flex h-4 text-xs">
+  <span
+    class="bg-black px-1 text-center flex flex-col justify-center text-yellow-600"
+    >KP:</span
+  >
+  <span class="w-full relative flex flex-col justify-center py-1 bg-white">
+    <div
+      [ngClass]="{
+        'bg-green-500': hpPercent >= 50,
+        'bg-yellow-500': hpPercent < 50 && hpPercent >= 10,
+        'bg-red-500': hpPercent < 10
+      }"
+      class="absolute z-10 h-3 transition-all duration-1000"
+      style="width:{{ hpPercent }}%"
+    ></div>
+    <div class="absolute bg-white h-3 w-full"></div>
+  </span>
+  <span class="bg-black w-1"></span>
+</div>

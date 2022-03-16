@@ -13,7 +13,7 @@ export class GameComponent implements OnInit {
 
   ngOnInit(): void {}
   activeComponent = {
-    name: 'base',
+    name: 'team',
   }
 
   myTeam = getPokemonTeam()

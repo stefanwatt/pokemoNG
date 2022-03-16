@@ -1,0 +1,17 @@
+<div class="flex w-full" *ngFor="let pokemon of team; let i = index">
+  <span class="flex justify-between w-16">
+    <span class="flex justify-center items-center" *ngIf="i === 0"> > </span>
+    <span class="w-12">
+      <img
+        class="h-full p-2"
+        src="https://img.pokemondb.net/sprites/silver/normal/{{
+          pokemon.name
+        }}.png"
+        alt="avatar.png"
+      />
+    </span>
+  </span>
+  <section class="h-full max-h-14 text-xs p-2 border-black">
+    <app-kp [pokemon]="pokemon"></app-kp>
+  </section>
+</div>
