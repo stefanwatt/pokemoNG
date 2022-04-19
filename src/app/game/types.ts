@@ -1,3 +1,5 @@
+import { ControlsEntry } from './controls/types'
+import VIEWS from './views'
 export type Move = {
   name: string
   currentTp: number
@@ -18,4 +20,10 @@ export const pokemonBlueprint: Pokemon = {
   currentKp: 200,
   maxKp: 200,
   moves: [{ name: 'Tackle', currentTp: 20, maxTp: 20 }],
+}
+
+export type GameState = {
+  activeView: VIEWS
+  myTeam: Pokemon[]
+  enemyTeam: Pokemon[]
 }

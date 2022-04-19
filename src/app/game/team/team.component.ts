@@ -10,5 +10,5 @@ export class TeamComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  @Input() team: Pokemon[]
+  @Input() team: Pokemon[] | undefined
 }

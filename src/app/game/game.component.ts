@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core'
 import { Store } from '@ngrx/store'
 import { Observable } from 'rxjs'
 import getPokemonTeam from './getPokemonTeam'
+import VIEWS from './views'
+import { GameState } from './types'
 
 @Component({
   selector: 'app-game',
@@ -9,13 +11,11 @@ import getPokemonTeam from './getPokemonTeam'
   styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-  activeComponent = {
-    name: 'base',
+  game$: Observable<GameState>
+  constructor(private store: Store<{ game: GameState }>) {
+    this.game$ = store.select('game')
   }
 
-  myTeam = getPokemonTeam()
-  enemyTeam = getPokemonTeam()
+  ngOnInit(): void {}
+  VIEWS = VIEWS
 }

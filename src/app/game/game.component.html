@@ -1,22 +1,22 @@
 <div
-  *ngIf="activeComponent.name === 'base'"
+  *ngIf="(game$ | async)?.activeView === VIEWS.FIGHT"
   class="flex flex-col justify-between mt-8 bg-white h-96"
 >
   <section class="h-full p-2 border-black">
-    <app-enemy [team]="enemyTeam"></app-enemy>
+    <app-enemy [team]="(game$ | async)?.enemyTeam"></app-enemy>
   </section>
   <section class="h-full p-2 border-black">
-    <app-me [team]="myTeam"></app-me>
+    <app-me [team]="(game$ | async)?.myTeam"></app-me>
   </section>
   <section class="h-full p-2 border-black">
     <app-footer></app-footer>
   </section>
 </div>
 <div
-  *ngIf="activeComponent.name === 'team'"
+  *ngIf="(game$ | async)?.activeView === VIEWS.TEAM"
   class="flex flex-col w-full justify-between bg-white p-4"
 >
-  <app-team [team]="myTeam"></app-team>
+  <app-team [team]="(game$ | async)?.myTeam"></app-team>
   <section class="h-full p-2 border-black">
     <app-footer></app-footer>
   </section>

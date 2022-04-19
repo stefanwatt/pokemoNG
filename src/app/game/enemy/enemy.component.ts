@@ -11,8 +11,8 @@ export class EnemyComponent implements OnInit {
 
   currentPokemon = pokemonBlueprint
   ngOnInit() {
-    this.currentPokemon = this.team[0]
+    this.currentPokemon = this?.team ? this.team[0] : pokemonBlueprint
   }
 
-  @Input() team: Pokemon[]
+  @Input() team: Pokemon[] | undefined
 }
