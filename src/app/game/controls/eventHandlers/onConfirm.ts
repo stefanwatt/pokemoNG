@@ -1,11 +1,15 @@
 import fightEntries from '../lib/fightEntries'
 import { ControlsState } from '../types'
 
-export default (state: ControlsState) => {
+import { controlsStore } from '../controls.store'
+
+export default () => {
+  controlsStore.update((state: ControlsState) => {
   if (state.selectedEntry.text === 'FIGHT')
     return { entries: fightEntries, selectedEntry: fightEntries[0] }
-  if (state.selectedEntry.text === 'PKMN') {
+    else  
     return state
-  }
-  return state
+  })
 }
+
+

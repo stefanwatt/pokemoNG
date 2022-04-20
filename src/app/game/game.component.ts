@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core'
-import { Store } from '@ngrx/store'
-import { Observable } from 'rxjs'
-import getPokemonTeam from './getPokemonTeam'
 import VIEWS from './views'
-import { GameState } from './types'
+import { gameStore } from './game.store'
+import { select } from '@ngneat/elf'
 
 @Component({
   selector: 'app-game',
@@ -11,10 +9,7 @@ import { GameState } from './types'
   styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit {
-  game$: Observable<GameState>
-  constructor(private store: Store<{ game: GameState }>) {
-    this.game$ = store.select('game')
-  }
+  game$ = gameStore.pipe(select((state) => state))
 
   ngOnInit(): void {}
   VIEWS = VIEWS

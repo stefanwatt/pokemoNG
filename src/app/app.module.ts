@@ -10,8 +10,6 @@ import { KpComponent } from './game/kp/kp.component'
 import { MaleIconComponent } from './game/kp/male-icon/male-icon.component'
 import { FemaleIconComponent } from './game/kp/female-icon/female-icon.component'
 import { BarComponent } from './game/kp/bar/bar.component'
-import { StoreModule } from '@ngrx/store'
-import { controlsReducer } from './game/controls/controls.reducer'
 import { GameboyButtonsComponent } from './gameboy-buttons/gameboy-buttons.component'
 import { FooterComponent } from './game/footer/footer.component'
 import { MessageComponent } from './game/message/message.component'
@@ -32,7 +30,7 @@ import { MessageComponent } from './game/message/message.component'
     FooterComponent,
     MessageComponent,
   ],
-  imports: [BrowserModule, StoreModule.forRoot({ controls: controlsReducer })],
+  imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
 })

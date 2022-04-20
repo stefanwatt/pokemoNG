@@ -1,9 +1,17 @@
-import { ControlsEntry } from './controls/types'
 import VIEWS from './views'
+
 export type Move = {
   name: string
   currentTp: number
   maxTp: number
+}
+export type EventHandlers = {
+  onGoUp(): void
+  onGoDown(): void
+  onGoLeft(): void
+  onGoRight(): void
+  onConfirm(): void
+  onCancel(): void
 }
 export type Pokemon = {
   name: string
@@ -26,4 +34,5 @@ export type GameState = {
   activeView: VIEWS
   myTeam: Pokemon[]
   enemyTeam: Pokemon[]
+  eventHandlers: EventHandlers
 }
