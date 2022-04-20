@@ -1,6 +1,6 @@
 import fightEntries from '../lib/fightEntries'
 import { ControlsState } from '../types'
-import teamEventHandlers from '../../team/eventHandlers'
+import onCancelTeam from '../../team/eventHandlers/onCancel'
 import { controlsStore } from '../controls.store'
 import { gameStore } from '../../game.store'
 import { GameState } from '../../types'
@@ -13,7 +13,7 @@ export default () => {
         return {
           ...state,
           activeView: VIEWS.TEAM,
-          eventHandlers: teamEventHandlers,
+          eventHandlers: { ...state.eventHandlers, onCancel: onCancelTeam },
         }
       })
     if (state.selectedEntry.text === 'FIGHT')
