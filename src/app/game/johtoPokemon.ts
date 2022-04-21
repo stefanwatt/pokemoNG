@@ -1,3 +1,4 @@
+//TODO add display names because of things like nidoran-m/nidoran-f
 export default [
   'bulbasaur',
   'ivysaur',
