@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { Pokemon } from '../types'
+import { teamStore } from './team.store'
+import { select } from '@ngneat/elf'
 
 @Component({
   selector: 'app-team',
@@ -9,6 +11,7 @@ import { Pokemon } from '../types'
 export class TeamComponent implements OnInit {
   constructor() {}
 
+  selectedIndex$ = teamStore.pipe(select((state) => state.selectedIndex))
   ngOnInit(): void {}
   @Input() team: Pokemon[] | undefined
 }
