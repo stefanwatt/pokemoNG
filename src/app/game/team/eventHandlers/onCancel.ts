@@ -5,8 +5,8 @@ import VIEWS from '../../views'
 import { TeamState, teamStore } from '../team.store'
 
 export default () => {
-  teamStore.update((state:TeamState)=>{
-    return {...state,selectedIndex:0}
+  teamStore.update((state: TeamState) => {
+    return { ...state, selectedIndex: 0 }
   })
   gameStore.update((state: GameState) => {
     return {
