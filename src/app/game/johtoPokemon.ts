@@ -81,7 +81,7 @@ export default [
   'slowbro',
   'magnemite',
   'magneton',
-  'farfetch’d',
+  'farfetchd',
   'doduo',
   'dodrio',
   'seel',
