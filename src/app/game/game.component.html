@@ -1,6 +1,6 @@
 <div
   *ngIf="(game$ | async)?.activeView === VIEWS.FIGHT"
-  class="flex flex-col justify-between mt-8 bg-white h-96"
+  class="flex flex-col justify-between mt-8 bg-white h-[444px]"
 >
   <section class="h-full p-2 border-black">
     <app-enemy [team]="(game$ | async)?.enemyTeam"></app-enemy>
@@ -14,7 +14,7 @@
 </div>
 <div
   *ngIf="(game$ | async)?.activeView === VIEWS.TEAM"
-  class="flex flex-col w-full justify-between bg-white p-4"
+  class="flex flex-col w-full justify-between mt-8 bg-white p-4"
 >
   <app-team [team]="(game$ | async)?.myTeam"></app-team>
   <section class="h-full p-2 border-black">
